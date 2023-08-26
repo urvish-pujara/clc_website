@@ -62,7 +62,7 @@ const LineChart = ({ isCustomLineColors = false, isDashboard = false }) => {
         tickSize: 0,
         tickPadding: 5,
         tickRotation: 0,
-        legend: isDashboard ? undefined : "transportation", // added
+        legend: isDashboard , // added
         legendOffset: 36,
         legendPosition: "middle",
       }}
@@ -80,10 +80,10 @@ const LineChart = ({ isCustomLineColors = false, isDashboard = false }) => {
       enableGridY={false}
       pointSize={8}
       pointColor={{ theme: "background" }}
-      pointBorderWidth={2}
-      pointBorderColor={{ from: "serieColor" }}
-      pointLabelYOffset={-12}
-      useMesh={true}
+      // pointBorderWidth={2}
+      // pointBorderColor={{ from: "serieColor" }}
+      // pointLabelYOffset={-12}
+      // useMesh={true}
       legends={[
         {
           anchor: "bottom-right",

@@ -5,6 +5,7 @@ import { mockDataTeam } from "../../data/mockData";
 import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettingsOutlined";
 import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
 import SecurityOutlinedIcon from "@mui/icons-material/SecurityOutlined";
+import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import Header from "../../components/Header";
 
 const Team = () => {
@@ -20,8 +21,7 @@ const Team = () => {
     },
     {
       field: "age",
-      headerName: "Age",
-      type: "number",
+      headerName: "Roll Number",
       headerAlign: "left",
       align: "left",
     },
@@ -37,7 +37,7 @@ const Team = () => {
     },
     {
       field: "accessLevel",
-      headerName: "Access Level",
+      headerName: "Team",
       flex: 1,
       renderCell: ({ row: { access } }) => {
         return (
@@ -48,17 +48,18 @@ const Team = () => {
             display="flex"
             justifyContent="center"
             backgroundColor={
-              access === "admin"
+              access === "Head"
                 ? colors.greenAccent[600]
-                : access === "manager"
+                : access === "Logistics"
                 ? colors.greenAccent[700]
-                : colors.greenAccent[700]
+                : colors.greenAccent[800]
             }
             borderRadius="4px"
           >
-            {access === "admin" && <AdminPanelSettingsOutlinedIcon />}
-            {access === "manager" && <SecurityOutlinedIcon />}
-            {access === "user" && <LockOpenOutlinedIcon />}
+            {access === "Head" && <AdminPanelSettingsOutlinedIcon />}
+            {access === "Logistics" && <SecurityOutlinedIcon />}
+            {access === "Events" && <LockOpenOutlinedIcon />}
+            {access === "Finance" && <MonetizationOnIcon />}
             <Typography color={colors.grey[100]} sx={{ ml: "5px" }}>
               {access}
             </Typography>
@@ -70,7 +71,7 @@ const Team = () => {
 
   return (
     <Box m="20px">
-      <Header title="TEAM" subtitle="Managing the Team Members" />
+      <Header title="TEAM" subtitle="Managing the access to Team Members" />
       <Box
         m="40px 0 0 0"
         height="75vh"

@@ -11,7 +11,7 @@ const Invoices = () => {
     { field: "id", headerName: "ID" },
     {
       field: "name",
-      headerName: "Name",
+      headerName: "Event Name",
       flex: 1,
       cellClassName: "name-column--cell",
     },
@@ -22,7 +22,7 @@ const Invoices = () => {
     },
     {
       field: "email",
-      headerName: "Email",
+      headerName: "Item Name",
       flex: 1,
     },
     {
@@ -31,7 +31,7 @@ const Invoices = () => {
       flex: 1,
       renderCell: (params) => (
         <Typography color={colors.greenAccent[500]}>
-          ${params.row.cost}
+          Rs. {params.row.cost}
         </Typography>
       ),
     },
@@ -44,7 +44,7 @@ const Invoices = () => {
 
   return (
     <Box m="20px">
-      <Header title="INVOICES" subtitle="List of Invoice Balances" />
+      <Header title="INVOICES" subtitle="List of Invoice Balances for billed expenses" />
       <Box
         m="40px 0 0 0"
         height="75vh"
